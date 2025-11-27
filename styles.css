@@ -1432,7 +1432,9 @@ a {
     .coffee-price h2 {
         font-size: 28px;
     }
-
+    .highlight strong {
+        font-size: 18px;
+    }
     .price {
         font-size: 40px;
     }
