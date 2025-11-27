@@ -26,7 +26,7 @@ function initScrollAnimations() {
 
     // 애니메이션을 적용할 요소들 선택
     const elementsToAnimate = document.querySelectorAll(
-        ".vision-content, .benefit-card, .essence-quote, .keywords-section, .positioning-section, .stat-card, .stats-section, .story-content, .zero-card, .zero-faq"
+        ".vision-content, .benefit-card, .essence-quote, .keywords-section, .positioning-section, .revenue-card, .revenue-summary, .stat-card, .stats-section, .story-content, .zero-card, .zero-faq"
     );
 
     elementsToAnimate.forEach((el) => {
@@ -151,7 +151,7 @@ function hideLoadingScreen() {
             setTimeout(() => {
                 loadingScreen.remove();
             }, 500);
-        }, 2000); // 3초 후 로딩 화면 숨김
+        }, 1000); // 3초 후 로딩 화면 숨김
     }
 }
 
@@ -174,3 +174,6 @@ window.addEventListener("load", () => {
 window.addEventListener("beforeunload", () => {
     window.scrollTo(0, 0);
 });
+const wait = () => {
+    alert("준비중입니다.");
+};
