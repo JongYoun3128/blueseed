@@ -1024,6 +1024,7 @@ a {
 .video iframe {
     width: 1000px;
     height: 500px;
+    margin-bottom: 100px;
 }
 .story-content p {
     font-size: 18px;
