@@ -144,14 +144,32 @@ function initPhoneInputValidation() {
 // 로딩 화면 처리
 function hideLoadingScreen() {
     const loadingScreen = document.getElementById("loading-screen");
+    const popup = document.querySelector(".popup");
+
     if (loadingScreen) {
         setTimeout(() => {
             loadingScreen.classList.add("hidden");
             // 로딩 화면이 완전히 사라진 후 DOM에서 제거
             setTimeout(() => {
                 loadingScreen.remove();
+                // 로딩 화면이 사라진 후 팝업 표시
+                if (popup) {
+                    popup.classList.add("show");
+                }
             }, 500);
-        }, 1000); // 3초 후 로딩 화면 숨김
+        }, 1000);
+    }
+}
+
+// 팝업 닫기 기능
+function initPopup() {
+    const closeBtn = document.getElementById("close-btn");
+    const popup = document.querySelector(".popup");
+
+    if (closeBtn && popup) {
+        closeBtn.addEventListener("click", () => {
+            popup.classList.remove("show");
+        });
     }
 }
 
@@ -160,6 +178,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initScrollAnimations();
     initFormSubmit();
     initPhoneInputValidation();
+    initPopup();
 
     // 페이지 로드 시 맨 위로 스크롤
     window.scrollTo(0, 0);
